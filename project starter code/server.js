@@ -1,8 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
-
-
+import fs from 'fs';
 
   // Init the Express application
   const app = express();
@@ -27,7 +26,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util.js';
     const filteredImagePath = await filterImageFromURL(image_url);
 
     // Send the filtered image in the response
-    res.sendFile(filteredImagePath, (err) => {
+    res.status(200).sendFile(filteredImagePath, (err) => {
       // Delete the file after sending the response
       fs.unlink(filteredImagePath, (unlinkError) => {
         if (unlinkError) {
