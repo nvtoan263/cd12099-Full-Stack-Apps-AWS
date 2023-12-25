@@ -4,21 +4,25 @@ You have been hired as a software engineer to develop an application that will h
 You will build upon the application we've developed during the lessons in this course. You'll complete a REST API endpoint in a backend service that processes incoming image URLs.
 
 ## Getting Started
+1. Create IAM with access key
+2. Config aws configure with newly create IAM user
+3. Clone this code to local
 
-You can clone this repo to run the project locally, or navigate to the workspace in the Udacity course.
 
 ## Project Instructions
 
 To complete this project, you will need to:
 
-* Set up node environment
-* Create a new endpoint in the server.js file
-* Deploying your system
+* To start application locally
+> npm run dev
+* To build and deploy application onto AWS ElasticBeanstalk
+> eb init
+* and
+> eb create
+* To update if any source code changes
+> eb deploy
 
 ## Testing
+Application deployed successful to AWS at:
 
-Successful URL responses should have a 200 code. Ensure that you include error codes for the scenario that someone uploads something other than an image and for other common errors.
-
-## License
-
-[License](LICENSE.txt)
+[Link to Application - EBS Endpoint](http://project2-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309_FMT_WHH?wid=508&hei=472&fmt=p-jpg&qlt=95&.v=1693086369818)
